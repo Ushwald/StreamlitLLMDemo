@@ -134,7 +134,8 @@ if prompt:
 
     # ...and write it out to the screen
 
-    st.write(response)
+    #st.write(response)
+    st.write(completion)
 
 
 
