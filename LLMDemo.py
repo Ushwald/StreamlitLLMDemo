@@ -116,7 +116,20 @@ if prompt:
 
     # Then pass the prompt to the LLM
 
-    response = agent_executor.run(prompt)
+    #response = agent_executor.run(prompt)
+
+    docs = store.similarity_search(query)
+
+    # print results
+    #print(docs[0].page_content)
+    completion = openai.ChatCompletion.create(
+      model="gpt-3.5-turbo",
+    messages = [{"role": "system", "content" : "You are ChatGPT, a large language model trained by OpenAI. Answer as concisely as possible.\nKnowledge cutoff: 2021-09-01\nCurrent date: 2023-03-02"},
+    {"role": "user", "content" : "How are you?"},
+    {"role": "assistant", "content" : "I am doing well"},
+    {"role": "user", "content" : "Read the following: {}.\nnow reply to the following prompt: {}".format(docs[0].page_content,prompt)}]
+    )
+
 
     # ...and write it out to the screen
 
