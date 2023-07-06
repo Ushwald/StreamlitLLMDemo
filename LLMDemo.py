@@ -6,6 +6,7 @@ import os
 # Import OpenAI as main LLM service
 
 from langchain.llms import OpenAI
+import openai
 
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.embeddings.sentence_transformer import SentenceTransformerEmbeddings
