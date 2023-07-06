@@ -78,7 +78,7 @@ vectorstore_info = VectorStoreInfo(
 
     name="annual_report",
 
-    description="a banking annual report as a pdf",
+    description="a NIWA annual report as a pdf",
 
     vectorstore=store
 
@@ -102,7 +102,7 @@ agent_executor = create_vectorstore_agent(
 
 )
 
-st.title('🦜🔗 GPT Investment Banker')
+st.title('🦜🔗  NIWA-expert bot')
 
 # Create a text input box for the user
 
