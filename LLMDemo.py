@@ -135,7 +135,7 @@ if prompt:
     # ...and write it out to the screen
 
     #st.write(response)
-    st.write(completion)
+    st.write(completion['choices'][0]['message']['content'])
 
 
 
