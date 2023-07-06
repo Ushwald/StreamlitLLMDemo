@@ -8,6 +8,7 @@ import os
 from langchain.llms import OpenAI
 
 from langchain.embeddings import OpenAIEmbeddings
+from langchain.embeddings.sentence_transformer import SentenceTransformerEmbeddings
 
 # Bring in streamlit for UI/app interface
 
@@ -52,13 +53,14 @@ load_dotenv(find_dotenv())
 
 llm = OpenAI(temperature=0.1, verbose=True)
 
-embeddings = OpenAIEmbeddings()
+embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+
 
 
 
 # Create and load PDF Loader
 
-loader = PyPDFLoader('annualreport.pdf')
+loader = PyPDFLoader('NIWA2022.pdf')
 
 # Split pages from pdf 
 
