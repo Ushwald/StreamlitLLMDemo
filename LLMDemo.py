@@ -118,7 +118,7 @@ if prompt:
 
     #response = agent_executor.run(prompt)
 
-    docs = store.similarity_search(query)
+    docs = store.similarity_search(prompt)
 
     # print results
     #print(docs[0].page_content)
