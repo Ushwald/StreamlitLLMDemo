@@ -1,5 +1,6 @@
 # Import os to set API key
 
+
 import os
 
 # Import OpenAI as main LLM service
@@ -42,7 +43,8 @@ from langchain.agents.agent_toolkits import (
 
 # Can sub this out for other LLM providers
 
-os.environ['OPENAI_API_KEY'] = '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'
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
 
 
 
